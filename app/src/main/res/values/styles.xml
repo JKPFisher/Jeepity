@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="OfflineRoutesButtons" parent="orbutton">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHighlight">#B9F6CA</item>
+        <item name="android:textColorHint">#B9F6CA</item>
+        <item name="android:textColorLink">#B9F6CA</item>
+    </style>
+
+    <style name="orbutton">orbutton</style>
+</resources>

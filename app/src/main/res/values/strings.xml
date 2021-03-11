@@ -1,0 +1,141 @@
+<resources>
+    <string name="app_name">JeepityBasic</string>
+    <string name="directions_minesview">To get to Minesview..</string>
+    <string name="directions_botanical">To get to Botanical Garden..</string>
+    <string-array name="barangays">
+        <item>A. Bonifacio-Caguioa-Rimando</item>
+        <item>Abanao-Zandueta-Kayong-Chugum-Otek</item>
+        <item>Alfonso Tabora</item>
+        <item>Ambiong</item>
+        <item>Andres Bonifacio (Lower Bokawkan)</item>
+        <item>Apugan-Loakan</item>
+        <item>Asin Road</item>
+        <item>Atok Trail</item>
+        <item>Aurora Hill Proper </item>
+        <item>Aurora Hill, North Central</item>
+        <item>Aurora Hill, South Central</item>
+        <item>Bagong Lipunan (Market Area)</item>
+        <item>Bakakeng Central</item>
+        <item>Bakakeng North</item>
+        <item>Bal-Marcoville (Marcoville)</item>
+        <item>Balsigan</item>
+        <item>Bayan Park East</item>
+        <item>Bayan Park Village</item>
+<item>Bayan Park West (Bayan Park, Leonila Hill)</item>
+<item>BGH Compound</item>
+<item>Brookside</item>
+<item>Brookspoint</item>
+<item>Cabinet Hill-Teachers Camp</item>
+<item>Camdas Subdivision</item>
+<item>Camp 7</item>
+<item>Camp 8</item>
+<item>Camp Allen</item>
+<item>Campo Filipino</item>
+<item>City Camp Central</item>
+<item>City Camp Proper</item>
+<item>Country Club Village</item>
+<item>Cresencia Village</item>
+<item>Dagsian, Lower</item>
+<item>Dagsian, Upper</item>
+<item>Dizon Subdivision</item>
+<item>Dominican Hill-Mirador</item>
+<item>Dontogan</item>
+<item>DPS Compound</item>
+<item>Engineers Hill</item>
+<item>Esmeralda Avenue</item>
+<item>Fairview Village</item>
+<item>Ferdinand (Happy Homes-Campo Sioco)</item>
+<item>Fort del Pilar</item>
+<item>Gabriela Silang</item>
+<item>General Emilio F. Aguinaldo (Magsaysay, Lower)</item>
+<item>General Luna, Upper</item>
+<item>General Luna, Lower</item>
+<item>Gibraltar</item>
+<item>Greenwater Village</item>
+<item>Guisad Central</item>
+<item>Guisad Sorong</item>
+<item>Happy Hollow</item>
+<item>Happy Homes (Happy Homes-Lucban)</item>
+<item>Harrison-Claudio Carantes</item>
+<item>Hillside</item>
+<item>Holy Ghost Extension</item>
+<item>Holy Ghost Proper</item>
+<item>Honeymoon (Honeymoon-Holy Ghost)</item>
+<item>Imelda R. Marcos (La Salle)</item>
+<item>Imelda Village</item>
+<item>Irisan</item>
+<item>Kabayanihan</item>
+<item>Kagitingan</item>
+<item>Kayang Extension</item>
+<item>Kayang-Hilltop</item>
+<item>Kias</item>
+<item>Legarda-Burnham-Kisad</item>
+<item>Liwanag-Loakan</item>
+<item>Loakan Proper</item>
+<item>Lopez Jaena</item>
+<item>Lourdes Subdivision Extension</item>
+<item>Lourdes Subdivision, Lower</item>
+<item>Lourdes Subdivision, Proper</item>
+<item>Lualhati</item>
+<item>Lucnab</item>
+<item>Magsaysay Private Road</item>
+<item>Magsaysay, Lower</item>
+<item>Magsaysay, Upper</item>
+<item>Malcolm Square-Perfecto (Jose Abad Santos)</item>
+<item>Manuel A. Roxas</item>
+<item>Market Subdivision, Upper</item>
+<item>Middle Quezon Hill Subdivision (Quezon Hill Middle)</item>
+<item>Military Cut-off</item>
+<item>Mines View Park</item>
+<item>Modern Site, East</item>
+<item>Modern Site, West</item>
+<item>MRR-Queen of Peace</item>
+<item>New Lucban</item>
+<item>Outlook Drive</item>
+<item>Pacdal</item>
+<item>Padre Burgos</item>
+<item>Padre Zamora</item>
+<item>Palma-Urbano (Cariño-Palma)</item>
+<item>Phil-Am</item>
+<item>Pinget</item>
+<item>Pinsao Pilot Project</item>
+<item>Pinsao Proper</item>
+<item>Poliwes</item>
+<item>Pucsusan</item>
+<item>Quezon Hill Proper</item>
+<item>Quezon Hill, Upper</item>
+<item>Quirino Hill, East</item>
+<item>Quirino Hill, Lower</item>
+<item>Quirino Hill, Middle</item>
+<item>Quirino Hill, West</item>
+<item>Quirino-Magsaysay, Upper (Upper QM)</item>
+<item>Rizal Monument Area</item>
+<item>Rock Quarry, Lower</item>
+<item>Rock Quarry, Middle</item>
+        <item>Rock Quarry, Upper</item>
+        <item>Saint Joseph Village</item>
+        <item>Salud Mitra</item>
+        <item>San Antonio Village</item>
+        <item>San Luis Village</item>
+        <item>San Roque Village</item>
+        <item>San Vicente</item>
+        <item>Sanitary Camp, North</item>
+        <item>Sanitary Camp, South</item>
+        <item>Santa Escolastica</item>
+        <item>Santo Rosario</item>
+        <item>Santo Tomas Proper</item>
+        <item>Santo Tomas School Area</item>
+        <item>Scout Barrio</item>
+        <item>Session Road Area</item>
+        <item>Slaughter House Area (Santo Niño Slaughter)</item>
+        <item>SLU-SVP Housing Village</item>
+        <item>South Drive</item>
+        <item>Teodora Alonzo</item>
+        <item>Trancoville</item>
+        <item>Victoria Village</item>
+
+    </string-array>
+
+
+
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/orMinesView2"
+        style="@style/OfflineRoutesButtons"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:text="The Lions Head"
+        app:backgroundTint="#90BD5A"
+        app:iconTint="#CCFF90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.371"
+        app:rippleColor="#B9F6CA" />
+
+    <Button
+        android:id="@+id/orMinesView"
+        style="@style/OfflineRoutesButtons"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:text="MinesView"
+        app:backgroundTint="#90BD5A"
+        app:iconTint="#CCFF90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.301"
+        app:rippleColor="#B9F6CA" />
+
+    <Button
+        android:id="@+id/orbotanicalgarden"
+        style="@style/OfflineRoutesButtons"
+        android:layout_width="351dp"
+        android:layout_height="48dp"
+        android:text="Botanical Garden"
+        app:backgroundTint="#90BD5A"
+        app:iconTint="#CCFF90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231"
+        app:rippleColor="#B9F6CA" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="192dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="Offline Routes"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="349dp"
+        android:layout_height="54dp"
+        android:text="Offline Routes is a list of routes commonly taken and are saved offline for quick access. The centerpoint for each offline route is Session Road "
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
