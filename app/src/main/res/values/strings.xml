@@ -2,6 +2,7 @@
     <string name="app_name">JeepityBasic</string>
     <string name="directions_minesview">To get to Minesview..</string>
     <string name="directions_botanical">To get to Botanical Garden..</string>
+    <string name="maps_api_key">AIzaSyBla3FWS2ZBlhLtvT7JpvQs2ppp-RtaMlQ</string>
     <string-array name="barangays">
         <item>A. Bonifacio-Caguioa-Rimando</item>
         <item>Abanao-Zandueta-Kayong-Chugum-Otek</item>
@@ -135,6 +136,7 @@
         <item>Victoria Village</item>
 
     </string-array>
+
 
 
 

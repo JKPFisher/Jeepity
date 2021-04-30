@@ -8,7 +8,7 @@ import android.widget.TextView
 
 
 class SpinnerActivity : Activity(), AdapterView.OnItemSelectedListener {
-    val user_location: Spinner = findViewById(R.id.spinner)
+    //val user_location: Spinner = findViewById(R.id.spinner)
 
     //
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {

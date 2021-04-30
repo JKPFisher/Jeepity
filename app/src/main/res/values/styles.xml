@@ -11,4 +11,17 @@
     </style>
 
     <style name="orbutton">orbutton</style>
+
+
+    <style name="Buttons" parent="OfflineRoutesButtons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RecylerViewStyle">
+        <item name="android:layout_width" >match_parent</item>
+        <item name="android:layout_height">576dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 </resources>
