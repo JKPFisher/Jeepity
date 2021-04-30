@@ -14,8 +14,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-
-
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 
 /**
  * DISPLAY MAP ACTIVITY.
@@ -48,6 +48,13 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         //**********************************************************
+        val Text: TextView = findViewById<TextView>(R.id.textView3)
+        val text2: TextView = findViewById<TextView>(R.id.textView4)
+        val refresh: Button = findViewById<Button>(R.id.btn_show)
+
+        val bottomSheetFragment = BottomSheetFragment()
+        refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")}
+
         val offline: Button = findViewById<Button>(R.id.offline)
         offline.setOnClickListener { val intent = Intent(this,
             OfflineRoutes::class.java)
@@ -58,9 +65,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
             SavedLocations::class.java)
             startActivity(intent)}
 
-        val Text: TextView = findViewById<TextView>(R.id.textView3)
-        val text2: TextView = findViewById<TextView>(R.id.textView4)
-        val refresh: Button = findViewById<Button>(R.id.btn_show)
+
 
 
 
@@ -122,7 +127,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-                refresh.setOnClickListener {
+         /*  refresh.setOnClickListener {
 
                     if (spinner_destination.selectedItem.toString().equals(spinner_location.selectedItem.toString())
                     ) {
@@ -150,7 +155,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                         }
 
                     }
-                }
+                }*/
 
 
             //user_location.onItemSelectedListener = null

@@ -97,6 +97,7 @@
         android:id="@+id/textView3"
         android:layout_width="338dp"
         android:layout_height="33dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
@@ -105,15 +106,15 @@
         app:layout_constraintVertical_bias="0.925" />
 
 
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="339dp"
         android:layout_height="33dp"
         android:layout_marginBottom="16dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
