@@ -13,16 +13,16 @@ import com.example.jeepitybasic.models.Place
 import com.example.jeepitybasic.models.UserMap
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
+const val EXTRA_USER_MAP4 = "EXTRA_USER_MAP"
 private const val TAG ="SavedLocations"
 
-class SavedLocations : AppCompatActivity() {
+class TouristLocations : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_locations) //
+        setContentView(R.layout.activity_tourist) //
         supportActionBar?.hide()
-   //MAIN ACTIVITY
-        val rvMaps: RecyclerView = findViewById<RecyclerView>(R.id.rvMaps) //
+        //MAIN ACTIVITY
+        val rvMaps: RecyclerView = findViewById<RecyclerView>(R.id.rvMaps4) //
 
         val userMaps = generateSampleData()
         //Set layout manager on recycler view
@@ -34,8 +34,8 @@ class SavedLocations : AppCompatActivity() {
             override fun onItemClick(position: Int) {
                 Log.i(TAG, "onItemClick $position")
                 //when a user taps on view in RV, navigate to new activity
-                val intent = Intent(this@SavedLocations, MapsMarkerActivity::class.java) //
-               intent.putExtra(EXTRA_USER_MAP, userMaps[position]) //
+                val intent = Intent(this@TouristLocations, MapsMarkerActivity::class.java) //
+                intent.putExtra(EXTRA_USER_MAP4, userMaps[position]) //
                 startActivity(intent)
 
             }
@@ -47,7 +47,7 @@ class SavedLocations : AppCompatActivity() {
     private fun generateSampleData(): List<UserMap> {
         return listOf(
             UserMap(
-                "Igorot Park",
+                "Botanical Garden",
                 listOf(
                     Place("Igorot Park", "Jeepney Station for Campo Sioco, Bakakeng, and PNR", 16.413044213568572, 120.59468018279351)
                 )
@@ -63,7 +63,7 @@ class SavedLocations : AppCompatActivity() {
             UserMap("Govenor Pack Road",
                 listOf(
                     Place("Govenor Pack Road", "Jeepney Station", 16.4099107873973, 120.59835200645078),
-                    )
+                )
             ),
             UserMap("Magsaysay Avenue",
                 listOf(

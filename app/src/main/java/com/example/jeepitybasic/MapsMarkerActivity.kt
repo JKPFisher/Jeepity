@@ -1,11 +1,15 @@
 package com.example.jeepitybasic
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.example.jeepitybasic.models.UserMap
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -23,18 +27,23 @@ import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 // [START maps_marker_on_map_ready]
 private const val TAG = "DisplayMapActivity"
 
+
 class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var userMap: UserMap
+    private val LOCATION_PERMISSION_REQUEST = 1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-     userMap = intent.getSerializableExtra(EXTRA_USER_MAP) as UserMap
-
+        userMap = intent.getSerializableExtra(EXTRA_USER_MAP) as UserMap
+        userMap = intent.getSerializableExtra(EXTRA_USER_MAP2) as UserMap
+        userMap = intent.getSerializableExtra(EXTRA_USER_MAP3) as UserMap
+        userMap = intent.getSerializableExtra(EXTRA_USER_MAP4) as UserMap
         if (getString(R.string.maps_api_key).isEmpty()) {
             Toast.makeText(this,
                 "Add your own API key in MapWithMarker/app/secure.properties as MAPS_API_KEY=YOUR_API_KEY",
@@ -45,6 +54,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         // Get the SupportMapFragment and request notification when the map is ready to be used.
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
+
 
 
         //**********************************************************
@@ -126,8 +136,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-
-         /*  refresh.setOnClickListener {
+/*
+          refresh.setOnClickListener {
 
                     if (spinner_destination.selectedItem.toString().equals(spinner_location.selectedItem.toString())
                     ) {
@@ -155,7 +165,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                         }
 
                     }
-                }*/
+                } */
 
 
             //user_location.onItemSelectedListener = null
@@ -172,9 +182,11 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     // [END_EXCLUDE]
 
     // [START maps_marker_on_map_ready_add_marker]
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        getLocationAccess()
 
       Log.i(TAG, "user map to render: ${userMap.title}")
      val boundsBuilder = LatLngBounds.builder()
@@ -185,9 +197,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                .snippet(place.description))
        }
        googleMap.apply {
-            val baguio = LatLng(16.402434166768064, 120.59588659538619)
+            //val baguio = LatLng(16.402434166768064, 120.59588659538619)
 
-            mMap.addMarker(MarkerOptions().position(baguio).title("Baguio"))
+          //  mMap.addMarker(MarkerOptions().position(baguio).title("Baguio"))
             // [START_EXCLUDE silent]
            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(),
                 1000,
@@ -200,8 +212,34 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
             // [END_EXCLUDE]
        }
+
     }
-    // [END maps_marker_on_map_ready_add_marker]
+    private fun getLocationAccess() {
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            mMap.isMyLocationEnabled = true
+        }
+        else
+            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST)
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        if (requestCode == LOCATION_PERMISSION_REQUEST) {
+            if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
+                if (ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                )
+                mMap.isMyLocationEnabled = true
+
+            }
+            else {
+                Toast.makeText(this, "User has not granted location access permission", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        }
+    }
 
 }
 // [END maps_marker_on_map_ready]
