@@ -5,10 +5,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Location
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -21,9 +23,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.bottomsheet_fragment.*
-import java.util.*
+import java.net.HttpURLConnection
+import java.net.URL
 
 /**
  * DISPLAY MAP ACTIVITY.
@@ -65,6 +66,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         //**********************************************************
         val Text: TextView = findViewById<TextView>(R.id.textView3)
         val text2: TextView = findViewById<TextView>(R.id.textView4)
+
+
         val refresh: Button = findViewById<Button>(R.id.btn_show)
 
         val bottomSheetFragment = BottomSheetFragment()
@@ -217,8 +220,13 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
+
+                fun concat(two: String, one: String) {
+
+                }
                 if (locationResult.locations.isNotEmpty()) {
                     val location = locationResult.lastLocation
+                    mMap.clear();
                     if (location != null) {
 
                         fun getAdminArea(){
@@ -226,11 +234,14 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                             //administative area level 5
                             val add = address
                         }
-
                         val latLng = LatLng(location.latitude, location.longitude)
-                        val markerOptions = MarkerOptions().position(latLng).title("Your Location").snippet("The Barangay you are in is: "+location.latitude +location.longitude)
+
+                        println("location recalibrated")
+
+                        val markerOptions = MarkerOptions().position(latLng).title("Your Location").snippet("Your Coordinates are: "+location.latitude +location.longitude)
                         mMap.addMarker(markerOptions)
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+
+                        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
 
                     } //Now that we've extracted latitude and longitude, we need google to give us an address !!
                 }
