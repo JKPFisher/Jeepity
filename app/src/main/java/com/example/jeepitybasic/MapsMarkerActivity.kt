@@ -3,6 +3,8 @@ package com.example.jeepitybasic
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.jeepitybasic.models.UserMap
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -20,6 +23,7 @@ import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
+import java.util.*
 
 /**
  * DISPLAY MAP ACTIVITY.
@@ -29,12 +33,13 @@ private const val TAG = "DisplayMapActivity"
 
 
 class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
-
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var mMap: GoogleMap
     private lateinit var userMap: UserMap
     private val LOCATION_PERMISSION_REQUEST = 1
-
-
+    private lateinit var locationRequest: LocationRequest
+    private lateinit var locationCallback: LocationCallback
+    private lateinit var address: Address
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,7 +68,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         val refresh: Button = findViewById<Button>(R.id.btn_show)
 
         val bottomSheetFragment = BottomSheetFragment()
-        refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")}
+        refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager,
+            "BottomSheetDialog")}
 
         val offline: Button = findViewById<Button>(R.id.offline)
         offline.setOnClickListener { val intent = Intent(this,
@@ -171,12 +177,88 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
             //user_location.onItemSelectedListener = null
 
 
+        } //AFTER THIS LINE
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
         }
+        fusedLocationClient.lastLocation
+            .addOnSuccessListener { location : Location? ->
+                // Got last known location. In some rare situations this can be null.
+            //    val latitude: Double = Location.getLatitude()
+              //  val longitude: Double = Location.getLongitude()
+            }
+
 
 
 
     }
 
+
+    private fun getLocationUpdates() {
+
+
+        locationRequest = LocationRequest()
+        locationRequest.interval = 30000
+        locationRequest.fastestInterval = 20000
+        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                if (locationResult.locations.isNotEmpty()) {
+                    val location = locationResult.lastLocation
+                    if (location != null) {
+
+                        fun getAdminArea(){
+                     //      address=Address(getAdminArea())
+                            //administative area level 5
+                            val add = address
+                        }
+
+                        val latLng = LatLng(location.latitude, location.longitude)
+                        val markerOptions = MarkerOptions().position(latLng).title("Your Location").snippet("The Barangay you are in is: "+location.latitude +location.longitude)
+                        mMap.addMarker(markerOptions)
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+
+                    } //Now that we've extracted latitude and longitude, we need google to give us an address !!
+                }
+            }
+        }
+    }
+
+    private fun startLocationUpdates() {
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        fusedLocationClient.requestLocationUpdates(
+            locationRequest,
+            locationCallback,
+            null
+        )
+    }
 
     // [END maps_marker_get_map_async]
     // [END_EXCLUDE]
@@ -202,9 +284,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
           //  mMap.addMarker(MarkerOptions().position(baguio).title("Baguio"))
             // [START_EXCLUDE silent]
            mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(boundsBuilder.build(),
-                1000,
                1000,
-                0))
+               1000,
+               0))
 
 
           ///  mMap.setMinZoomPreference(11.0f)
@@ -215,15 +297,24 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
     private fun getLocationAccess() {
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.isMyLocationEnabled = true
+            getLocationUpdates()
+            startLocationUpdates()
         }
         else
-            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST)
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST)
     }
 
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (requestCode == LOCATION_PERMISSION_REQUEST) {
             if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
                 if (ActivityCompat.checkSelfPermission(this,
@@ -235,7 +326,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
             }
             else {
-                Toast.makeText(this, "User has not granted location access permission", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,
+                    "User has not granted location access permission",
+                    Toast.LENGTH_LONG).show()
                 finish()
             }
         }
