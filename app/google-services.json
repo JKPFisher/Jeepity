@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "507490269609",
+    "project_id": "jeepitybasic",
+    "storage_bucket": "jeepitybasic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507490269609:android:6eb64b5086bb8327b8ecb8",
+        "android_client_info": {
+          "package_name": "com.example.jeepitybasic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507490269609-kc434r28avhqi9tvcmdovooio1jh11j6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjNy4BoMl801dTYShhwJGy6Y33fBbvzZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507490269609-kc434r28avhqi9tvcmdovooio1jh11j6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

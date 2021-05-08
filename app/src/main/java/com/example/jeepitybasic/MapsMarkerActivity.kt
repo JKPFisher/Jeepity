@@ -5,12 +5,10 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Location
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -22,9 +20,30 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import java.net.HttpURLConnection
-import java.net.URL
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.CameraPosition
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
+import android.app.Activity
+import android.content.IntentSender
+import android.graphics.BitmapFactory
+import android.location.Geocoder
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.common.api.ResolvableApiException
+import com.google.android.gms.location.*
+import com.google.firebase.database.DatabaseReference
+
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 /**
  * DISPLAY MAP ACTIVITY.
@@ -34,6 +53,11 @@ private const val TAG = "DisplayMapActivity"
 
 
 class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
+
+    companion object {
+        const val REQUEST_CHECK_SETTINGS = 43
+    }
+
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var mMap: GoogleMap
     private lateinit var userMap: UserMap
@@ -44,6 +68,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
 
         userMap = intent.getSerializableExtra(EXTRA_USER_MAP) as UserMap
@@ -66,9 +91,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         //**********************************************************
         val Text: TextView = findViewById<TextView>(R.id.textView3)
         val text2: TextView = findViewById<TextView>(R.id.textView4)
-
-
         val refresh: Button = findViewById<Button>(R.id.btn_show)
+
+
 
         val bottomSheetFragment = BottomSheetFragment()
         refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager,
@@ -127,57 +152,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
             fun onNothingSelected(parent: AdapterView<*>) {
                 // Another interface callback
             }
-/*@Test SAMPLE FOR COMBINING TWO WHEN CASES
-            fun testCaseCombination() {
-                val fileType = UnixFileType.D
 
-                val frequentFileType: Boolean = when (fileType) {
-                    UnixFileType.HYPHEN_MINUS, UnixFileType.D -> true
-                    else -> false
-                }
-
-                assertTrue(frequentFileType)
-            }*/
-           // val spinner_destination = findViewById<View>(R.id.spinner2) as Spinner
-          //  val spinner_location = findViewById<View>(R.id.spinner) as Spinner
-
-
-
-
-
-/*
-          refresh.setOnClickListener {
-
-                    if (spinner_destination.selectedItem.toString().equals(spinner_location.selectedItem.toString())
-                    ) {
-                        Text.text = ("Take the incoming jeepney of barangay " + spinner_destination.selectedItem.toString())
-                        text2.text = (" ")
-
-                    } else {
-                        when (spinner_location.selectedItem.toString()) {
-                            ("SLU-SVP Housing Village") -> Text.text =
-                                "Take the Bakakeng Jeep to the paradahan of"
-
-                            ("A. Bonifacio-Caguioa-Rimando") -> Text.text =
-                                "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
-
-
-                        }
-
-
-
-
-                        when (spinner_destination.selectedItem.toString()) {
-                            ("Aurora Hill Proper") -> text2.text =
-                                "Aurora Hill, located at Harrison road. Then Take the Aurora Hill Jeep."
-
-                        }
-
-                    }
-                } */
-
-
-            //user_location.onItemSelectedListener = null
 
 
         } //AFTER THIS LINE
@@ -198,7 +173,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
         fusedLocationClient.lastLocation
-            .addOnSuccessListener { location : Location? ->
+            .addOnSuccessListener { location: Location? ->
                 // Got last known location. In some rare situations this can be null.
             //    val latitude: Double = Location.getLatitude()
               //  val longitude: Double = Location.getLongitude()
@@ -211,39 +186,44 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     private fun getLocationUpdates() {
-
-
         locationRequest = LocationRequest()
-        locationRequest.interval = 30000
-        locationRequest.fastestInterval = 20000
+        //locationRequest.interval = 30000
+       // locationRequest.fastestInterval = 20000
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        println("got this far 1")
 
         locationCallback = object : LocationCallback() {
-            override fun onLocationResult(locationResult: LocationResult) {
-
-                fun concat(two: String, one: String) {
-
-                }
+            override fun onLocationResult(locationResult: LocationResult) {   println("got this far 2")
                 if (locationResult.locations.isNotEmpty()) {
                     val location = locationResult.lastLocation
-                    mMap.clear();
-                    if (location != null) {
+                    println("got this far 3")
 
-                        fun getAdminArea(){
-                     //      address=Address(getAdminArea())
-                            //administative area level 5
-                            val add = address
+
+                    lateinit var databaseRef: DatabaseReference
+                 databaseRef = Firebase.database.reference
+                    val locationlogging = LocationLogging(location.latitude, location.longitude)
+                    databaseRef.child("userlocation").setValue(locationlogging)
+                        .addOnSuccessListener {
+                            Toast.makeText(applicationContext, "Locations written into the database", Toast.LENGTH_LONG).show()
+                            println("got this far 4")
                         }
+                        .addOnFailureListener {
+                            Toast.makeText(applicationContext, "Error occured while writing the locations", Toast.LENGTH_LONG).show()
+                       println("got this far 5")
+                        }
+
+
+/* To update only one attribute, use the following statement :
+                   database.child("userslocation").child("Latitude").setValue(location.latitude) */
+
+
+                    if (location != null) {
+                        println("got this far 6")
                         val latLng = LatLng(location.latitude, location.longitude)
-
-                        println("location recalibrated")
-
-                        val markerOptions = MarkerOptions().position(latLng).title("Your Location").snippet("Your Coordinates are: "+location.latitude +location.longitude)
+                        val markerOptions = MarkerOptions().position(latLng)
                         mMap.addMarker(markerOptions)
-
-                        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
-
-                    } //Now that we've extracted latitude and longitude, we need google to give us an address !!
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+                    }
                 }
             }
         }
@@ -277,6 +257,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     // [START maps_marker_on_map_ready_add_marker]
 
     override fun onMapReady(googleMap: GoogleMap) {
+        googleMap.uiSettings.isMyLocationButtonEnabled = true
+        googleMap.uiSettings.isZoomControlsEnabled = true
         mMap = googleMap
 
         getLocationAccess()
@@ -324,7 +306,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
-        grantResults: IntArray
+        grantResults: IntArray,
     ) {
         if (requestCode == LOCATION_PERMISSION_REQUEST) {
             if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
@@ -346,4 +328,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
 }
+
+
+
+
 // [END maps_marker_on_map_ready]
