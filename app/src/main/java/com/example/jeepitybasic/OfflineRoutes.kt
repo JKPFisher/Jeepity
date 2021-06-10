@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 
 class OfflineRoutes  : AppCompatActivity() {
     @SuppressLint("ResourceType")
@@ -21,34 +22,37 @@ class OfflineRoutes  : AppCompatActivity() {
         val minesview: Button = findViewById<Button>(R.id.orMinesView)
         val botanicalgarden: Button = findViewById<Button>(R.id.orbotanicalgarden)
 
+        println("got this far 1")
 
+      //  fun sendImage(view: View) {
 
-
+     //   }
 
         minesview.setOnClickListener {
-            val intent = Intent(this, Route::class.java)
+           val intent = Intent(this, Route::class.java)
             val mines_view: String = getString(R.string.directions_minesview)
-            //val imageViewq: ImageView = findViewById(R.drawable.minesview)
-           intent.putExtra("offrout", mines_view)
+         //   val imageView: ImageView = findViewById(R.drawable.minesview)
+            println("got this far 2")
+          intent.putExtra("offrout", mines_view)
+            println("got this far 3")
+           startActivity(intent)
+            println("got this far 4")
 
-            startActivity(intent)
-
-            fun sendImage(view: View) {
-                val intent = Intent(this@OfflineRoutes, Route::class.java)
-                intent.putExtra("resId", R.drawable.minesview)
-                startActivity(intent)
-            }
         }
         botanicalgarden.setOnClickListener {
             val intent = Intent(this, Route::class.java)
             val botanical: String = getString(R.string.directions_botanical)
             intent.putExtra("offrout", botanical)
-
+            println("got this far 2")
             startActivity(intent)
         }
 
     }
 }
 
+private fun Intent.putExtra(s: String, minesView: String, s1: String, minesview: Int) {
+    TODO("Not yet implemented")
+
+}
 
 
