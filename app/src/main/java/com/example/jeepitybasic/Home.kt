@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
-import kotlinx.android.synthetic.main.bottomsheet_fragment.button1
+
 
 
 class Home : AppCompatActivity() {
@@ -30,6 +30,14 @@ class Home : AppCompatActivity() {
 
         ahbutton2.setOnClickListener { val intent = Intent(this,
             TouristLocations::class.java)
+            startActivity(intent)}
+
+        ahbutton4.setOnClickListener { val intent = Intent(this,
+            OfflineRoutes::class.java)
+            startActivity(intent)}
+
+        ahbutton5.setOnClickListener { val intent = Intent(this,
+            OfflineTranslation::class.java)
             startActivity(intent)}
 
     }

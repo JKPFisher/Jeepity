@@ -34,16 +34,27 @@ import android.app.Activity
 import android.content.IntentSender
 import android.graphics.BitmapFactory
 import android.location.Geocoder
+import android.os.Build
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottomsheet_fragment.*
+import java.lang.reflect.Array.set
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.*
 
 /**
  * DISPLAY MAP ACTIVITY.
@@ -57,7 +68,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     companion object {
         const val REQUEST_CHECK_SETTINGS = 43
     }
-
+    lateinit var databaseRef: DatabaseReference
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var mMap: GoogleMap
     private lateinit var userMap: UserMap
@@ -69,6 +80,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        databaseRef = Firebase.database.reference
+        databaseRef.addValueEventListener(logListener)
 
 
         userMap = intent.getSerializableExtra(EXTRA_USER_MAP) as UserMap
@@ -95,18 +109,17 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-        val bottomSheetFragment = BottomSheetFragment()
-        refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager,
-            "BottomSheetDialog")}
 
-        val offline: Button = findViewById<Button>(R.id.offline)
-        offline.setOnClickListener { val intent = Intent(this,
-            OfflineRoutes::class.java)
-            startActivity(intent)}
+
+
+      //  val bottomSheetFragment = BottomSheetFragment()
+      //  refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")}
+
+
 
         val pins: Button = findViewById<Button>(R.id.pins)
         pins.setOnClickListener { val intent = Intent(this,
-            SavedLocations::class.java)
+            Home::class.java)
             startActivity(intent)}
 
 
@@ -156,6 +169,48 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         } //AFTER THIS LINE
+
+//HERE IS WHERE WE NEED TO SEND DATA TO THE BOTTOM SCREEN FRAGMENT AND DISPLAY IT
+         refresh.setOnClickListener {
+
+                   if (spinner_destination.selectedItem.toString().equals(spinner_location.selectedItem.toString())
+                   ) {
+                       Text.text = ("Take the incoming jeepney of barangay " + spinner_destination.selectedItem.toString())
+                       text2.text = (" ")
+
+                   }
+                     if ((spinner_destination.selectedItem.toString().equals("Legarda-Burnham-Kisad"))
+                     ) {
+
+                         Text.text = ("Take the outgoing jeepney of barangay " + spinner_location.selectedItem.toString())
+                         text2.text = (" ")
+
+                      //   refresh.setOnClickListener {bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")}
+
+
+                     }else {
+                       when (spinner_location.selectedItem.toString()) {
+                           ("Bakakeng North") -> Text.text =
+                               "Take the Bakakeng Jeep to the paradahan of"
+
+                           ("A. Bonifacio-Caguioa-Rimando") -> Text.text =
+                               "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
+
+
+                       }
+
+
+
+
+                       when (spinner_destination.selectedItem.toString()) {
+                           ("Legarda-Burnham-Kisad") -> text2.text =
+                               " "
+
+                       }
+
+                   }
+               }
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         if (ActivityCompat.checkSelfPermission(this,
@@ -199,7 +254,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                     println("got this far 3")
 
 
-                    lateinit var databaseRef: DatabaseReference
+
                  databaseRef = Firebase.database.reference
                     val locationlogging = LocationLogging(location.latitude, location.longitude)
                     databaseRef.child("userlocation").setValue(locationlogging)
@@ -214,7 +269,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 /* To update only one attribute, use the following statement :
-                   database.child("userslocation").child("Latitude").setValue(location.latitude) */
+                   database.child("userslocation").child("Latitude").setValue(location.latitude)
 
 
                     if (location != null) {
@@ -223,7 +278,60 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                         val markerOptions = MarkerOptions().position(latLng)
                         mMap.addMarker(markerOptions)
                         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+
+
+                    }*/
+                }
+            }
+        }
+    }
+
+    val logListener = object : ValueEventListener {
+        override fun onCancelled(error: DatabaseError) {
+            TODO("Could not read from database")
+            //flash error message?
+        }
+
+        override fun onDataChange(dataSnapshot: DataSnapshot) {
+            println("got this far 7")
+            if (dataSnapshot.exists()) {
+                val locationlogging = dataSnapshot.child("userlocation").getValue(LocationLogging::class.java)
+                var Lat=locationlogging?.Latitude
+                var Long=locationlogging?.Longitude
+
+
+                val geocoder: Geocoder
+                val addresses: List<Address>
+                geocoder = Geocoder(applicationContext, Locale.getDefault())
+                //Log.d("Latitude of driver", driverLat.toString())
+                //    Log.d("Longitude read from database", driverLong.toString())
+
+                if (Lat !=null  && Long != null) {
+                    addresses = geocoder.getFromLocation(Lat, Long, 15)
+                    val address: String = addresses[0].getAddressLine(0)
+                    textViewUserLoc.text=address
+
+
+                    //*************************************************************************
+                    val spinner_location: Spinner = findViewById(R.id.spinner)
+                    when {
+                        address.contains("Crestwood Court Subdivision") -> spinner_location.setSelection(13)
+                        address.contains("Montebello") ->  spinner_location.setSelection(13)
+                        address.contains("Western Link Circumferential Rd") -> spinner_location.setSelection(13)
                     }
+                    //      textViewUserLoc.text="Latitude:"+driverLat.toString()+", Longitude: "+driverLong.toString()
+                    println("got this far 8")
+
+                    val driverLoc = LatLng(Lat, Long)
+                    val markerOptions = MarkerOptions().position(driverLoc).title("Your Location")
+                    mMap.addMarker(markerOptions)
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(driverLoc, 10f))
+                    // 1: World, 5: Landmass/continent, 10: City, 15: Streets and 20: Buildings
+                    Toast.makeText(
+                        applicationContext,
+                        "Locations accessed from the database",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
         }
@@ -251,6 +359,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         )
     }
 
+
     // [END maps_marker_get_map_async]
     // [END_EXCLUDE]
 
@@ -270,6 +379,12 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
           boundsBuilder.include(latLng)
            mMap.addMarker(MarkerOptions().position(latLng).title(place.title)
                .snippet(place.description))
+
+           val spinner_destination: Spinner = findViewById(R.id.spinner2)
+           when {
+              userMap.title.equals("Igorot Park") -> spinner_destination.setSelection(66)
+
+           }
        }
        googleMap.apply {
             //val baguio = LatLng(16.402434166768064, 120.59588659538619)
@@ -328,6 +443,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
 }
+
+
 
 
 

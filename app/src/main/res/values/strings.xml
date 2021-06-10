@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">JeepityBasic</string>
-    <string name="directions_minesview">To get to Minesview..</string>
+    <string name="directions_minesview">To get to Minesview, take the Minesview jeep located at Jollibee Harrison Road.
+    The Jeepney fare will cost 15 pesos per person, or 11 pesos for students, PWD, and Seniors <b/>
+    Mines View is one of the oldest and most famous attractions in the City of Pines.
+        The park got its name from the Benguet mountain range where gold, silver and copper were once quarried.
+        It was a mining area for local diggers before the Americans discovered Baguio City.
+    </string>
     <string name="directions_botanical">To get to Botanical Garden..</string>
     <string name="maps_api_key">AIzaSyBla3FWS2ZBlhLtvT7JpvQs2ppp-RtaMlQ</string>
+    <string name="no_connection">No internet connection! Cannot be translated!</string>
     <string-array name="barangays">
         <item>A. Bonifacio-Caguioa-Rimando</item>
         <item>Abanao-Zandueta-Kayong-Chugum-Otek</item>

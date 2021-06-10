@@ -2,14 +2,20 @@ package com.example.jeepitybasic
 
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.google.android.gms.common.api.GoogleApi
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_route.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
+import java.io.IOException
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
 
@@ -20,10 +26,14 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     ): View? {
         return inflater.inflate(R.layout.bottomsheet_fragment, container, false)
 
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+
+
+
+
+
 
         fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
             // An item was selected. You can retrieve the selected item using
@@ -35,7 +45,11 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         fun onNothingSelected(parent: AdapterView<*>) {
             // Another interface callback
         }
+
+
+
 /*
+
         context?.let {
             ArrayAdapter.createFromResource(
                 it,
@@ -101,6 +115,9 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         }
     }*/
     }
-}
+
+
+
+
 
 
