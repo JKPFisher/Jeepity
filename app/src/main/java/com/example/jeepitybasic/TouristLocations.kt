@@ -52,35 +52,65 @@ class TouristLocations : AppCompatActivity() {
                     Place("Igorot Park", "Jeepney Station for Campo Sioco, Bakakeng, and PNR", 16.413044213568572, 120.59468018279351)
                 )
             ),
-            UserMap("Kayang Street",
-                listOf(
-                    Place("Peoples park", "Jeepney Station", 16.414759526813487, 120.59598212022799)
-                )),
-            UserMap("Kayang Street",
-                listOf(
-                    Place("Abanao Square", "Jeepney Station for All Naguillian Bound Jeepneys", 16.41455174371114, 120.59391148500853)
-                )),
-            UserMap("Govenor Pack Road",
-                listOf(
-                    Place("Govenor Pack Road", "Jeepney Station", 16.4099107873973, 120.59835200645078),
-                )
-            ),
-            UserMap("Magsaysay Avenue",
-                listOf(
-                    Place("Magsaysay Avenue", "Jeepney Station", 16.417596565668706, 120.59542630067823),
-                )
-            ),
-            UserMap("Harrison Road",
-                listOf(
-                    Place("Harrison Road", "Jeepney Station for Aurora Hill and Trancoville", 16.41227709207252, 120.59611841616801)
-                )
-            ),
-            UserMap("Centermall",
-                listOf(
-                    Place("Centermall", "Jeepney Station", 16.415790418102972, 120.59704099044497)
-                )
-            )
+        UserMap("Mines View Park",
+        listOf(
+            Place("Mines View Terminal", "Jeepney Station", 16.4212241, 120.6248027)
 
+            )
+            ),
+
+
+        UserMap("Camp John Hay",
+        listOf(
+            Place("Igorot Park", "Jeepney Station", 16.413044213568572, 120.59468018279351)
+
+        )
+        ),
+
+        UserMap("Philippine Military Academy",
+        listOf(
+            Place("Igorot Park", "Jeepney Station", 16.413044213568572, 120.59468018279351)
+
+        )
+        ),
+
+        UserMap("Strawberry Farms",
+        listOf(
+            Place("La Trinidad", "Jeepney Station", 16.417500, 120.595800)
+
+        )
+        ),
+        UserMap("Stobosa",
+        listOf(
+            Place("La Trinidad", "Jeepney Station", 16.417500, 120.595800)
+
+        )
+        ),
+        UserMap("Tree Top Adventure",
+        listOf(
+            Place("Igorot Park", "Jeepney Station", 16.413044213568572, 120.59468018279351)
+        )
+        ),
+        UserMap("Bell Church",
+        listOf(
+            Place("La Trinidad", "Jeepney Station", 16.417500, 120.595800)
+        )
+        ),
+        UserMap("Tam-awan Village",
+        listOf(
+            Place("Jeepney Terminal to Tam Awan Village", "Jeepney Station", 16.41521310857069, 120.59354728671913)
+        )
+        ),
+        UserMap("Wright Park",
+        listOf(
+            Place("Mines View Terminal", "Jeepney Station", 16.4212241, 120.6248027)
+        )
+        ),
+        UserMap("The Mansion",
+        listOf(
+            Place("Mines View Terminal", "Jeepney Station", 16.4212241, 120.6248027)
+        )
+        )
         )
     }
 

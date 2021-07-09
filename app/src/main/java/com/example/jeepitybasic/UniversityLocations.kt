@@ -49,39 +49,110 @@ class UniversityLocations : AppCompatActivity() {
             UserMap(
                 "University of the Cordilleras",
                 listOf(
-                    Place("Igorot Park", "Jeepney Station for Campo Sioco, Bakakeng, and PNR", 16.413044213568572, 120.59468018279351)
+                    Place("University of the Cordilleras", "", 16.4087, 120.5978),
                 )
             ),
-            UserMap("Kayang Street",
+
+            UserMap(
+                "University of Baguio",
                 listOf(
-                    Place("Peoples park", "Jeepney Station", 16.414759526813487, 120.59598212022799)
-                )),
-            UserMap("Kayang Street",
-                listOf(
-                    Place("Abanao Square", "Jeepney Station for All Naguillian Bound Jeepneys", 16.41455174371114, 120.59391148500853)
-                )),
-            UserMap("Govenor Pack Road",
-                listOf(
-                    Place("Govenor Pack Road", "Jeepney Station", 16.4099107873973, 120.59835200645078),
+                    Place("University of Baguio", "", 16.4054, 120.5981),
                 )
             ),
-            UserMap("Magsaysay Avenue",
+
+            UserMap(
+                "Baguio Central University",
                 listOf(
-                    Place("Magsaysay Avenue", "Jeepney Station", 16.417596565668706, 120.59542630067823),
+                    Place("Baguio Central University", "", 16.417222, 120.596667),
                 )
             ),
-            UserMap("Harrison Road",
+
+            UserMap(
+                "Pines City Colleges",
                 listOf(
-                    Place("Harrison Road", "Jeepney Station for Aurora Hill and Trancoville", 16.41227709207252, 120.59611841616801)
+                    Place("Pines City Colleges", "", 16.4260, 120.5947),
                 )
             ),
-            UserMap("Centermall",
+
+            UserMap(
+                "AMA Computer University",
                 listOf(
-                    Place("Centermall", "Jeepney Station", 16.415790418102972, 120.59704099044497)
+                    Place("AMA Computer University", "", 14.6653, 121.0125),
+                )
+            ),
+
+            UserMap(
+                "ST. Louis University",
+                listOf(
+                    Place("ST. Louis University", "", 16.3842, 120.5932),
+                )
+            ),
+
+            UserMap(
+                "University of the Philippines Baguio",
+                listOf(
+                    Place("University of the Philippines Baguio", "", 16.4052, 120.5986),
+                )
+            ),
+
+            UserMap(
+                "STI College",
+                listOf(
+                    Place("STI College", "", 16.4212, 120.5971),
+                )
+            ),
+
+
+            UserMap(
+                "Philippine Women's University - CDCEC - Baguio",
+                listOf(
+                    Place("Philippine Women's University - CDCEC - Baguio", "", 16.4178, 120.5962),
+                )
+            ),
+
+            UserMap(
+                "Informatics Institute Baguio",
+                listOf(
+                    Place("Informatics Institute Baguio", "", 16.4181, 120.5963),
+                )
+            ),
+
+            UserMap(
+                "National Baguio University",
+                listOf(
+                    Place("National Baguio University", "", 16.4226, 120.5906),
+                )
+            ),
+
+            UserMap(
+                "Philippine Military Academy",
+                listOf(
+                    Place("Philippine Military Academy", "", 16.3609, 120.6194),
+                )
+            ),
+
+            UserMap(
+                "Remnant International College",
+                listOf(
+                    Place("Remnant International College", "", 16.3891, 120.5995),
+                )
+            ),
+
+            UserMap(
+                "International Christian College",
+                listOf(
+                    Place("International Christian College", "", 16.3167, 120.5500),
+                )
+            ),
+
+            UserMap(
+                "Keystone College",
+                listOf(
+                    Place("Keystone College", "", 16.4016, 120.5942),
                 )
             )
-
         )
+
     }
 
 }

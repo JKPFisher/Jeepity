@@ -99,6 +99,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
         val pins: Button = findViewById<Button>(R.id.pins)
         pins.setOnClickListener { val intent = Intent(this,
             Home::class.java)
+            mMap.clear()
             startActivity(intent)}
 
 
@@ -158,14 +159,10 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
          refresh.setOnClickListener {
 
-             Text.text = ("Take the incoming jeepney of barangay " + spinner_destination.selectedItem.toString())
 
-             val bundle = Bundle()
-             bundle.putString("message", Text.text.toString())
-             myFragment.arguments = bundle
-             fragmentTransaction.add(R.id.frameLayout, myFragment).commit()
 
-/*
+
+
                    if (spinner_destination.selectedItem.toString().equals(spinner_location.selectedItem.toString())
                    ) {
                        Text.text = ("Take the incoming jeepney of barangay " + spinner_destination.selectedItem.toString())
@@ -409,7 +406,11 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
                        }
 
-                   }*/
+                   }
+             val bundle = Bundle()
+             bundle.putString("message", Text.text.toString())
+             myFragment.arguments = bundle
+             fragmentTransaction.add(R.id.frameLayout, myFragment).commit()
                }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)

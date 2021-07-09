@@ -1,14 +1,71 @@
 <resources>
     <string name="app_name">JeepityBasic</string>
+
     <string name="directions_minesview">To get to Minesview, take the Minesview jeep located at Jollibee Harrison Road.
-    The Jeepney fare will cost 15 pesos per person, or 11 pesos for students, PWD, and Seniors <b/>
-    Mines View is one of the oldest and most famous attractions in the City of Pines.
-        The park got its name from the Benguet mountain range where gold, silver and copper were once quarried.
-        It was a mining area for local diggers before the Americans discovered Baguio City.
+    The Jeepney fare will cost 15 pesos per person, or 11 pesos for students, PWD, and Seniors
     </string>
-    <string name="directions_botanical">To get to Botanical Garden..</string>
-    <string name="maps_api_key">AIzaSyBla3FWS2ZBlhLtvT7JpvQs2ppp-RtaMlQ</string>
+    <string name="desc_minesview">Mines View is one of the oldest and most famous attractions in the City of Pines. The park got its name from the Benguet mountain range where gold, silver and copper were once quarried. It was a mining area for local diggers before the Americans discovered Baguio City.</string>
+
+    <string name="directions_treetop">To get to here, take one of the jeepneys bound for Camp John Hay
+        located at Igorot Park.
+        The Jeepney fare will cost 15 pesos per person, or 11 pesos for students, PWD, and Seniors.
+        Get down at Camp John Hay and inform the guards at the gate when questioned where you are headed, so that they may
+        point you in the right direction.
+    </string>
+    <string name="description_treetop">Tree Top Adventure Baguio is one of the most distinctive and amusing recreational parks in the Philippines, and one of the few that offer motorized zip lines and team building facilities. Baguio may have many other tourist spots, but Tree Top Adventure Baguio takes the cake when it comes to adrenaline-pumping action!</string>
+    <string name="desc_yellowtrail">The Yellow Trail in Camp John Hay in Baguio City is a must see for young and old nature lovers, hikers and mountaineers. This two-kilometer, 2-hour trail is free. The trail is surrounded by pine trees and allows you a good glimpse of the neighboring mountain ranges. This should be one of the refreshing things to do in Baguio.</string>
+
+
+
+    <string name="directions_strawberry">To get to here, take one of the jeepneys bound for La Trinidad or Rizal Park
+        The Jeepney fare will cost 25 pesos per person, or 20 pesos for students, PWD, and Seniors.
+        Get down at the Strawberry Farm Entrance, which is a few meters after the Benguet State University entrance.
+    </string>
+    <string name="desc_strawberry">Those who wish to engage in Strawberry Picking may do so at a minimal fee. Charges will depend on the number of baskets you wish to fill.There are also strawberries for sale and other related products such as strawberry ice-cream and strawberry-taho, as well as other produce.</string>
+
+    <string name="directions_colors">To get to here, take one of the jeepneys bound for La Trinidad at Centermall or Rizal Park
+        The Jeepney fare will cost 25 pesos per person, or 20 pesos for students, PWD, and Seniors.
+        Get down after the La Trinidad Arch, you should see all the painted homes before you say parra .
+    </string>
+    <string name="desc_colors">The Colors of StoBoSa is a popular tourist attraction in La Trinidad. Officially named StoBoSa Hillside Homes Artwork, it was the brainchild of the DOT-CAR in collaboration with the Tam-Awan Village group which came up with several design proposals and over 500 residents/volunteers.</string>
+
+    <string name="directions_church">To get to here, take one of the jeepneys bound for La Trinidad at Centermall or Rizal Park
+        The Jeepney fare will cost 25 pesos per person, or 20 pesos for students, PWD, and Seniors.
+        Get down at the La Trinidad Arch, then walk on Bell Church Road, just follow the signs!
+    </string>
+    <string name="desc_bellchurch">Bell Church is a temple founded by Chinese immigrants from Canton (Guangzhou) in 1960.The serene atmosphere and the view while strolling around the courtyard attract a lot of tourists to the temple, making it a major tourist destination. It also features a small lily pond.</string>
+
+    <string name="directions_bencab">To get to here, take one of the jeepneys bound for Asin at the Baguio Public Market, Kayang Street
+        The Jeepney fare will cost 25 pesos per person, or 20 pesos for students, PWD, and Seniors.
+        Get down at the Museum, you can tell the driver "Museum po!" ahead of time as well.
+    </string>
+    <string name="desc_bencab">It is a great place for art lovers to visit, it has a variety of art collections and art pieces. It has a nice garden and there is an opportunity for an eco-trail walk. The inside staff are accommodating, they would offer to have your pictures taken.</string>
+
+    <string name="directions_botanical">To get to Botanical Garden take jeepneys bound for Leonardwood, this includes jeepneys like
+        Minesview, located at Jollibee Harrison Road. Pacdal, Maria Basa, and Gibraltar, all located at Kayang Street.
+        All of these jeeps can be found driving down Harrison road to take you to the jeepney station. </string>
+    <string name="desc_botanical">One of the many green spaces in the city, the Baguio Botanical Garden (renamed Centennial Park) is located between Wright Park and Teacher’s Camp, along Leonard Wood Road. This is a popular attraction in the city where visitors can enjoy the relaxing atmosphere of the verdant surroundings.</string>
+
+
+
+    <string name="directions_burnham">Burnham park is in the center of the city, every jeepney in the city passes one of it\'s attractions. You can take any city inbound jeepney to get here.</string>
+    <string name="desc_burnham">Burnham Park is the most famous attraction in the city. It is dominated by the Burnham Lake (or Lagoon) and dotted with other interesting spots like the Rose Garden, a recreational park with a skating rink, the Orchidarium, the Children’s Park, and the Melvin Jones Grandstand.</string>
+
+    <string name="directions_museum">This tourist spot is located across from Baguio City High. All Marcos highway inbound and outbound jeepneys pass the Baguio Museum.</string>
+    <string name="desc_museum">The museum’s collections tell the history of the city and showcase the culture of the Cordillera region. The four floors host all the collections classified into categories — Baguio Gallery, Cordillera Gallery, and the Alternative Gallery.</string>
+
+    <string name="directions_wrightpark">To get to Wright Park, take the Minesview jeep located at Jollibee Harrison Road. The Jeepney fare will cost 15 pesos per person, or 11 pesos for students, PWD, and Seniors</string>
+    <string name="desc_wrightpark">This is a favorite leisure spot for both locals and tourists. It’s a lush park that offers walking and jogging trails, biking paths, and rest spots. It features a long pond or pool that almost covers the whole stretch of concrete path linking the Wright Park Kiosk and The Mansion facade. It also has a pine tree-covered forest hill adjacent to the horse stable.</string>
+
+    <string name="directions_tamawan">To get to Tam-Awan, find the Long-Long Tacay Tam-Awan jeepney at Hilltop Street behind Abano Square</string>
+    <string name="desc_tamawan">Tam-Awan Village, nicknamed Garden in the Sky, was commissioned by the Chanum Foundation in 1998. It aims to create a model village showcasing reconstructed traditional Cordillera houses to make the region’s culture accessible to more people.</string>
+
+    <string name="directions_lionshead">To get to the Lions Head, take the Camp 6 jeepney located at Victory Liner. To get to this Jeepney station it is reccomended to take the military-cut off jeepney at Igorot Park. The fare for the Military-cut off jeepney will cost you 9, while the jeepney for Camp 6 will cost you 25.</string>
+    <string name="desc_lionshead">The Lions Head is a statue along Kennon Road, a major highway in Luzon, Philippines. Located in Camp 6 near the Baguio–Tuba boundary. It was conceptualized by the Lions Club members of Baguio, during the term of Luis Lardizabal as mayor of Baguio from 1969 to 1970 and as the club\'s president, to become the club\'s symbol or imprint in the area.</string>
+
     <string name="no_connection">No internet connection! Cannot be translated!</string>
+    <string name="maps_api_key">AIzaSyBla3FWS2ZBlhLtvT7JpvQs2ppp-RtaMlQ</string>
+    <string name="back">back</string>
     <string-array name="barangays">
         <item>A. Bonifacio-Caguioa-Rimando</item>
         <item>Abanao-Zandueta-Kayong-Chugum-Otek</item>
@@ -28,97 +85,97 @@
         <item>Balsigan</item>
         <item>Bayan Park East</item>
         <item>Bayan Park Village</item>
-<item>Bayan Park West (Bayan Park, Leonila Hill)</item>
-<item>BGH Compound</item>
-<item>Brookside</item>
-<item>Brookspoint</item>
-<item>Cabinet Hill-Teachers Camp</item>
-<item>Camdas Subdivision</item>
-<item>Camp 7</item>
-<item>Camp 8</item>
-<item>Camp Allen</item>
-<item>Campo Filipino</item>
-<item>City Camp Central</item>
-<item>City Camp Proper</item>
-<item>Country Club Village</item>
-<item>Cresencia Village</item>
-<item>Dagsian, Lower</item>
-<item>Dagsian, Upper</item>
-<item>Dizon Subdivision</item>
-<item>Dominican Hill-Mirador</item>
-<item>Dontogan</item>
-<item>DPS Compound</item>
-<item>Engineers Hill</item>
-<item>Esmeralda Avenue</item>
-<item>Fairview Village</item>
-<item>Ferdinand (Happy Homes-Campo Sioco)</item>
-<item>Fort del Pilar</item>
-<item>Gabriela Silang</item>
-<item>General Emilio F. Aguinaldo (Magsaysay, Lower)</item>
-<item>General Luna, Upper</item>
-<item>General Luna, Lower</item>
-<item>Gibraltar</item>
-<item>Greenwater Village</item>
-<item>Guisad Central</item>
-<item>Guisad Sorong</item>
-<item>Happy Hollow</item>
-<item>Happy Homes (Happy Homes-Lucban)</item>
-<item>Harrison-Claudio Carantes</item>
-<item>Hillside</item>
-<item>Holy Ghost Extension</item>
-<item>Holy Ghost Proper</item>
-<item>Honeymoon (Honeymoon-Holy Ghost)</item>
-<item>Imelda R. Marcos (La Salle)</item>
-<item>Imelda Village</item>
-<item>Irisan</item>
-<item>Kabayanihan</item>
-<item>Kagitingan</item>
-<item>Kayang Extension</item>
-<item>Kayang-Hilltop</item>
-<item>Kias</item>
-<item>Legarda-Burnham-Kisad</item>
-<item>Liwanag-Loakan</item>
-<item>Loakan Proper</item>
-<item>Lopez Jaena</item>
-<item>Lourdes Subdivision Extension</item>
-<item>Lourdes Subdivision, Lower</item>
-<item>Lourdes Subdivision, Proper</item>
-<item>Lualhati</item>
-<item>Lucnab</item>
-<item>Magsaysay Private Road</item>
-<item>Magsaysay, Lower</item>
-<item>Magsaysay, Upper</item>
-<item>Malcolm Square-Perfecto (Jose Abad Santos)</item>
-<item>Manuel A. Roxas</item>
-<item>Market Subdivision, Upper</item>
-<item>Middle Quezon Hill Subdivision (Quezon Hill Middle)</item>
-<item>Military Cut-off</item>
-<item>Mines View Park</item>
-<item>Modern Site, East</item>
-<item>Modern Site, West</item>
-<item>MRR-Queen of Peace</item>
-<item>New Lucban</item>
-<item>Outlook Drive</item>
-<item>Pacdal</item>
-<item>Padre Burgos</item>
-<item>Padre Zamora</item>
-<item>Palma-Urbano (Cariño-Palma)</item>
-<item>Phil-Am</item>
-<item>Pinget</item>
-<item>Pinsao Pilot Project</item>
-<item>Pinsao Proper</item>
-<item>Poliwes</item>
-<item>Pucsusan</item>
-<item>Quezon Hill Proper</item>
-<item>Quezon Hill, Upper</item>
-<item>Quirino Hill, East</item>
-<item>Quirino Hill, Lower</item>
-<item>Quirino Hill, Middle</item>
-<item>Quirino Hill, West</item>
-<item>Quirino-Magsaysay, Upper (Upper QM)</item>
-<item>Rizal Monument Area</item>
-<item>Rock Quarry, Lower</item>
-<item>Rock Quarry, Middle</item>
+        <item>Bayan Park West (Bayan Park, Leonila Hill)</item>
+        <item>BGH Compound</item>
+        <item>Brookside</item>
+        <item>Brookspoint</item>
+        <item>Cabinet Hill-Teachers Camp</item>
+        <item>Camdas Subdivision</item>
+        <item>Camp 7</item>
+        <item>Camp 8</item>
+        <item>Camp Allen</item>
+        <item>Campo Filipino</item>
+        <item>City Camp Central</item>
+        <item>City Camp Proper</item>
+        <item>Country Club Village</item>
+        <item>Cresencia Village</item>
+        <item>Dagsian, Lower</item>
+        <item>Dagsian, Upper</item>
+        <item>Dizon Subdivision</item>
+        <item>Dominican Hill-Mirador</item>
+        <item>Dontogan</item>
+        <item>DPS Compound</item>
+        <item>Engineers Hill</item>
+        <item>Esmeralda Avenue</item>
+        <item>Fairview Village</item>
+        <item>Ferdinand (Happy Homes-Campo Sioco)</item>
+        <item>Fort del Pilar</item>
+        <item>Gabriela Silang</item>
+        <item>General Emilio F. Aguinaldo (Magsaysay, Lower)</item>
+        <item>General Luna, Upper</item>
+        <item>General Luna, Lower</item>
+        <item>Gibraltar</item>
+        <item>Greenwater Village</item>
+        <item>Guisad Central</item>
+        <item>Guisad Sorong</item>
+        <item>Happy Hollow</item>
+        <item>Happy Homes (Happy Homes-Lucban)</item>
+        <item>Harrison-Claudio Carantes</item>
+        <item>Hillside</item>
+        <item>Holy Ghost Extension</item>
+        <item>Holy Ghost Proper</item>
+        <item>Honeymoon (Honeymoon-Holy Ghost)</item>
+        <item>Imelda R. Marcos (La Salle)</item>
+        <item>Imelda Village</item>
+        <item>Irisan</item>
+        <item>Kabayanihan</item>
+        <item>Kagitingan</item>
+        <item>Kayang Extension</item>
+        <item>Kayang-Hilltop</item>
+        <item>Kias</item>
+        <item>Legarda-Burnham-Kisad</item>
+        <item>Liwanag-Loakan</item>
+        <item>Loakan Proper</item>
+        <item>Lopez Jaena</item>
+        <item>Lourdes Subdivision Extension</item>
+        <item>Lourdes Subdivision, Lower</item>
+        <item>Lourdes Subdivision, Proper</item>
+        <item>Lualhati</item>
+        <item>Lucnab</item>
+        <item>Magsaysay Private Road</item>
+        <item>Magsaysay, Lower</item>
+        <item>Magsaysay, Upper</item>
+        <item>Malcolm Square-Perfecto (Jose Abad Santos)</item>
+        <item>Manuel A. Roxas</item>
+        <item>Market Subdivision, Upper</item>
+        <item>Middle Quezon Hill Subdivision (Quezon Hill Middle)</item>
+        <item>Military Cut-off</item>
+        <item>Mines View Park</item>
+        <item>Modern Site, East</item>
+        <item>Modern Site, West</item>
+        <item>MRR-Queen of Peace</item>
+        <item>New Lucban</item>
+        <item>Outlook Drive</item>
+        <item>Pacdal</item>
+        <item>Padre Burgos</item>
+        <item>Padre Zamora</item>
+        <item>Palma-Urbano (Cariño-Palma)</item>
+        <item>Phil-Am</item>
+        <item>Pinget</item>
+        <item>Pinsao Pilot Project</item>
+        <item>Pinsao Proper</item>
+        <item>Poliwes</item>
+        <item>Pucsusan</item>
+        <item>Quezon Hill Proper</item>
+        <item>Quezon Hill, Upper</item>
+        <item>Quirino Hill, East</item>
+        <item>Quirino Hill, Lower</item>
+        <item>Quirino Hill, Middle</item>
+        <item>Quirino Hill, West</item>
+        <item>Quirino-Magsaysay, Upper (Upper QM)</item>
+        <item>Rizal Monument Area</item>
+        <item>Rock Quarry, Lower</item>
+        <item>Rock Quarry, Middle</item>
         <item>Rock Quarry, Upper</item>
         <item>Saint Joseph Village</item>
         <item>Salud Mitra</item>
@@ -140,7 +197,6 @@
         <item>Teodora Alonzo</item>
         <item>Trancoville</item>
         <item>Victoria Village</item>
-
     </string-array>
 
 
