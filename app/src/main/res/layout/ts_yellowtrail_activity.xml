@@ -4,31 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/strawberry_farm1">
+    android:background="@drawable/yellow_trail1">
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        android:text="back"
-        android:textColor="#000000"
+        android:text="@string/back"
         app:backgroundTint="#00FFFFFF"
         app:icon="@drawable/abc_vector_test"
-        app:iconTint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/myImageViewText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/myImageViewText"
 
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@drawable/pngkey_com_condensation_png_2326254"
+        android:layout_height="500dp"
+        android:background="@drawable/pngkey_com_gradient_background_png_3182237"
         android:fontFamily="sans-serif-condensed"
-        android:gravity="top|left"
+        android:gravity="start|top"
+        android:rotation="180"
         android:shadowColor="#000000"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -47,17 +48,18 @@
     <TextView
         android:id="@+id/textView14"
         android:layout_width="333dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/desc_strawberry"
-        android:textColor="#000000"
+        android:outlineAmbientShadowColor="#000000"
+        android:text="@string/desc_yellowtrail"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <TextView
         android:id="@+id/textView12"
@@ -65,29 +67,29 @@
         android:layout_height="100dp"
         android:layout_marginTop="1dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/directions_strawberry"
-        android:textColor="#000000"
+        android:text="@string/directions_treetop"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.082" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
-        android:text="Strawberry Farm"
-        android:textColor="#000000"
+        android:text="Yellow Trail"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/myImageViewText"
-        app:layout_constraintVertical_bias="0.373" />
+        app:layout_constraintVertical_bias="0.431" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

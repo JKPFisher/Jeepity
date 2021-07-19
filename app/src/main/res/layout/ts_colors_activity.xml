@@ -4,7 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/colors_of_stobosa">
+    android:background="@drawable/colors_of_stobosa1">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:text="back"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:icon="@drawable/abc_vector_test"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/myImageViewText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/myImageViewText"

@@ -63,16 +63,6 @@
             app:layout_constraintVertical_bias="0.005"
             tools:context="com.example.jeepitybasic.MapsMarkerActivity" />
 
-        <TextView
-            android:id="@+id/textViewUserLoc"
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginTop="5sp"
-            android:text="ADDRESS"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
     </FrameLayout>
 
     <Spinner

@@ -1,18 +1,14 @@
 package com.example.jeepitybasic
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jeepitybasic.models.Place
 import com.example.jeepitybasic.models.UserMap
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
+
 const val EXTRA_USER_MAP3 = "EXTRA_USER_MAP"
 private const val TAG ="SavedLocations"
 

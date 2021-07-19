@@ -515,7 +515,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (Lat !=null  && Long != null) {
                     addresses = geocoder.getFromLocation(Lat, Long, 15)
                     val address: String = addresses[0].getAddressLine(0)
-                    textViewUserLoc.text=address
+               //     textViewUserLoc.text=address
 
 
                     //*************************************************************************

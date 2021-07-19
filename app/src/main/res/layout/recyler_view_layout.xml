@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:outlineAmbientShadowColor="#838383"
+    android:outlineSpotShadowColor="#201E1E"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="#888888"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/placeholder__1_" />
+
+        <TextView
+            android:id="@+id/LineOne"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="57dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:fontFamily="sans-serif-condensed"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/LineTwo"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LineOne"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="70dp"
+            android:layout_toEndOf="@+id/imageView" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

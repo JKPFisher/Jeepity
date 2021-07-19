@@ -23,6 +23,8 @@
         <item name="android:layout_height">576dp</item>
         <item name="android:background">#FFFFFF</item>
         <item name="android:textAlignment">center</item>
+
+
     </style>
 
     <style name="AudioFileInfoOverlayText">
@@ -34,5 +36,12 @@
         <item name="android:shadowDx">1</item>
         <item name="android:shadowDy">2</item>
         <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="offline_routes_buttons">
+        <item name="android:layout_width">351dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/rounded_corners</item>
     </style>
 </resources>

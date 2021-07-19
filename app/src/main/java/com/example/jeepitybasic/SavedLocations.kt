@@ -1,18 +1,14 @@
 package com.example.jeepitybasic
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jeepitybasic.models.Place
 import com.example.jeepitybasic.models.UserMap
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
+
 const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
 private const val TAG ="SavedLocations"
 
@@ -52,27 +48,52 @@ class SavedLocations : AppCompatActivity() {
                     Place("Igorot Park", "Jeepney Station for Campo Sioco, Bakakeng, and PNR", 16.413044213568572, 120.59468018279351)
                 )
             ),
-            UserMap("Kayang Street",
+            UserMap("Jacinto Street",
                 listOf(
-                    Place("Peoples park", "Jeepney Station", 16.414759526813487, 120.59598212022799)
+                    Place("Peoples park", "Jeepney Station for Pacdal, Maria Basa, Minesview", 16.414759526813487, 120.59598212022799)
                 )),
             UserMap("Kayang Street",
                 listOf(
-                    Place("Abanao Square", "Jeepney Station for All Naguillian Bound Jeepneys", 16.41455174371114, 120.59391148500853)
+                    Place("Abanao Square", "Jeepney Station for all Naguillian Bound Jeepneys", 16.41455174371114, 120.59391148500853)
                 )),
             UserMap("Govenor Pack Road",
                 listOf(
-                    Place("Govenor Pack Road", "Jeepney Station", 16.4099107873973, 120.59835200645078),
+                    Place("Govenor Pack Road", "Jeepney Station for Minesview", 16.4099107873973, 120.59835200645078),
                     )
             ),
             UserMap("Magsaysay Avenue",
                 listOf(
-                    Place("Magsaysay Avenue", "Jeepney Station", 16.417596565668706, 120.59542630067823),
+                    Place("Magsaysay Avenue", "Jeepney Station for La Trinidad bound jeepneys", 16.417596565668706, 120.59542630067823),
                 )
             ),
             UserMap("Harrison Road",
                 listOf(
                     Place("Harrison Road", "Jeepney Station for Aurora Hill and Trancoville", 16.41227709207252, 120.59611841616801)
+                )
+            ),
+            UserMap("Veterans Loop",
+                listOf(
+                    Place("Patriotic", "Jeepney Station", 16.411277, 120.597505)
+                )
+            ),
+            UserMap("SkyWorld",
+                listOf(
+                    Place("Calderon Street", "Jeepney Station for Loakan", 16.412315, 120.597042)
+                )
+            ),
+            UserMap("KFC Lower Session",
+                listOf(
+                    Place("Lower Session", "Jeepney Station for Camp 7 and Camp 8", 16.413502, 120.595389)
+                )
+            ),
+            UserMap("Victory Liner",
+                listOf(
+                    Place("Marcoville Street", "Jeepney Station for Camp 6", 16.405062, 120.602546)
+                )
+            ),
+            UserMap("Pinesview Bridge",
+                listOf(
+                    Place("La Trinidad Pinesview", "Jeepney Station for Camp Mt Kalugong", 16.405062, 120.602546)
                 )
             ),
             UserMap("Centermall",

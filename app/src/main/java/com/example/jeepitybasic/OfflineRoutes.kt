@@ -17,27 +17,180 @@ class OfflineRoutes  : AppCompatActivity() {
 
 
 
-        orMinesView.setOnClickListener       {
+        orMinesView.setOnClickListener{
             setContentView(R.layout.ts_minesview_activity)
-            this.supportActionBar?.hide()
 
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+                                            }
+        orbotanicalgarden.setOnClickListener {
+            setContentView(R.layout.ts_botanical_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+                                            }
+        orLionsHead.setOnClickListener {
+            setContentView(R.layout.ts_lionshead_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+                                      }
+        orbellchurch.setOnClickListener{
+            setContentView(R.layout.ts_bellchurch_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+                                      }
+        orbellchurch.setOnClickListener       {
+            setContentView(R.layout.ts_bellchurch_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        orbellhouse.setOnClickListener       {
+            setContentView(R.layout.ts_bellhouse_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        orburnham.setOnClickListener       {
+            setContentView(R.layout.ts_burnham_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        ormuseum.setOnClickListener       {
+            setContentView(R.layout.ts_museum_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        ornegativism.setOnClickListener       {
+            setContentView(R.layout.ts_negativism_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        ornightmarket.setOnClickListener       {
+            setContentView(R.layout.ts_nightmarket_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        ortreetop.setOnClickListener       {
+            setContentView(R.layout.ts_treetopadventure_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        orwrightpark.setOnClickListener       {
+            setContentView(R.layout.ts_wrightpark_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                finish()
+                startActivity(intent)}
+        }
+        oryellowtrail.setOnClickListener       {
+            setContentView(R.layout.ts_yellowtrail_activity)
+
+            this.supportActionBar?.hide()
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
                 startActivity(intent)}
+        }
+        orcolors.setOnClickListener       {
+            setContentView(R.layout.ts_colors_activity)
 
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                startActivity(intent)}
+        }
+        orbencab.setOnClickListener       {
+            setContentView(R.layout.ts_bencab_activity)
 
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                startActivity(intent)}
         }
-        orbotanicalgarden.setOnClickListener {
-            setContentView(R.layout.ts_botanical_activity)
-        }
-        orLionsHead.setOnClickListener {
-            setContentView(R.layout.ts_lionshead_activity)
-        }
-        orbellchurch.setOnClickListener{
-            setContentView(R.layout.ts_bellchurch_activity)
-        }
+        orstrawberry.setOnClickListener       {
+            setContentView(R.layout.ts_strawberryfarm_activity)
 
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                startActivity(intent)}
+        }
+        ortamawan.setOnClickListener       {
+            setContentView(R.layout.ts_tamawan_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                startActivity(intent)}
+        }
+        ormansion.setOnClickListener       {
+            setContentView(R.layout.ts_themansion_activity)
+
+            this.supportActionBar?.hide()
+            button.setOnClickListener{ val intent = Intent(
+                this,
+                OfflineRoutes::class.java)
+                startActivity(intent)}
+        }
     }
 
 }

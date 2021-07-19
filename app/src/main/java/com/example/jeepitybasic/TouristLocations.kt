@@ -47,7 +47,7 @@ class TouristLocations : AppCompatActivity() {
     private fun generateSampleData(): List<UserMap> {
         return listOf(
             UserMap(
-                "Botanical Garden",
+                "Igorot Park",
                 listOf(
                     Place("Igorot Park", "Jeepney Station for Campo Sioco, Bakakeng, and PNR", 16.413044213568572, 120.59468018279351)
                 )

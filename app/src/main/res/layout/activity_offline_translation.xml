@@ -1,42 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/android___3"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/inputToTranslate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Enter text"
-        android:inputType="text" />
-
-    <Button
-        android:id="@+id/translateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="32dp"
-        android:text="Translate" />
-
-    <TextView
-        android:id="@+id/translatedTv"
-        android:layout_width="360dp"
-        android:layout_height="118dp"
-        android:layout_gravity="center"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textView10"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="152dp"
-        android:text="TODO: OFFLINE TRANSLATE DESIGN]"
-        android:textAlignment="center"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/inputToTranslate"
+            android:layout_width="345dp"
+            android:layout_height="156dp"
+            android:layout_above="@+id/translateButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_grey_corners"
+            android:ems="10"
+            android:hint="Enter text"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/translateButton"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/translatedTv"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_corners"
+            android:text="Translate"
+            app:backgroundTint="@color/purple_700" />
+
+        <TextView
+            android:id="@+id/translatedTv"
+            android:layout_width="345dp"
+            android:layout_height="154dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="31dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="313dp"
+            android:background="@drawable/rounded_grey_corners"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="4dp"
+            tools:listitem="@layout/recyler_view_layout" />
+
+    </LinearLayout>
 
 </LinearLayout>
