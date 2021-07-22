@@ -35,8 +35,10 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="your.package.name.permission.MAPS_RECEIVE"/>
     <uses-feature
+        android:windowSoftInputMode="adjustPan"
         android:glEsVersion="0x00020000"
         android:required="true"/>
+
 
     <application
         android:allowBackup="true"

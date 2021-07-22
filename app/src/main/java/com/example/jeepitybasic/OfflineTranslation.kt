@@ -1,29 +1,27 @@
 package com.example.jeepitybasic
 
 import android.content.Context
-import android.content.Intent
 import android.net.ConnectivityManager
-import android.net.Credentials
 import android.net.NetworkInfo
 import android.os.Bundle
 import android.os.StrictMode
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.auth.oauth2.GoogleCredentials
 import com.google.cloud.translate.Translate
 import com.google.cloud.translate.TranslateOptions
 import kotlinx.android.synthetic.main.activity_offline_translation.*
 import java.io.IOException
-import java.lang.ProcessBuilder.Redirect.from
 
 class OfflineTranslation : AppCompatActivity() {
     private var translate: Translate? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_offline_translation)
+
+        
 
         translateButton.setOnClickListener {
             if (checkInternetConnection()) {
