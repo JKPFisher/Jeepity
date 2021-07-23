@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.example.jeepitybasic.models.Place
 import com.example.jeepitybasic.models.UserMap
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -97,10 +98,17 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         val pins: Button = findViewById<Button>(R.id.pins)
-        pins.setOnClickListener { val intent = Intent(this,
-            Home::class.java)
+        pins.setOnClickListener {
+
+            val intent = Intent(this, Home::class.java)
             mMap.clear()
-            startActivity(intent)}
+         this.finish()
+            this.finishAffinity()
+
+
+            println("pins")
+            startActivity(intent)
+            System.exit(0)}
 
 
 
@@ -159,7 +167,13 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
          refresh.setOnClickListener {
 
+                 if (refresh.isEnabled()){
+                     refresh.setOnClickListener(null)
+                 }
+             if (refresh == null && spinner_destination != null){
+                 mMap.clear()
 
+             }
 
 
 

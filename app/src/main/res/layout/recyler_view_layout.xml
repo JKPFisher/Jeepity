@@ -33,16 +33,5 @@
             android:text="TextView"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/LineTwo"
-            android:layout_width="258dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/LineOne"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="70dp"
-            android:layout_toEndOf="@+id/imageView" />
-
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

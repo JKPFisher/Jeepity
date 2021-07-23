@@ -15,13 +15,15 @@ import java.io.IOException
 
 class OfflineTranslation : AppCompatActivity() {
     private var translate: Translate? = null
+    private lateinit var blogAdapter: BlogRecyclerAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_offline_translation)
 
-        
+        initRecyclerView()
+        addDataSet()
 
         translateButton.setOnClickListener {
             if (checkInternetConnection()) {
@@ -76,6 +78,21 @@ class OfflineTranslation : AppCompatActivity() {
         //Means that we are connected to a network (mobile or wi-fi)
         return activeNetwork?.isConnected == true
 
+    }
+    private fun addDataSet(){
+        val data = DataSource.createDataSet()
+        blogAdapter.submitList(data)
+    }
+
+    private fun initRecyclerView(){
+
+        recycler_view.apply {
+            layoutManager = LinearLayoutManager(this@OfflineTranslation)
+            val topSpacingDecorator = TopSpacingItemDecoration(30)
+            addItemDecoration(topSpacingDecorator)
+            blogAdapter = BlogRecyclerAdapter()
+            adapter = blogAdapter
+        }
     }
 
 

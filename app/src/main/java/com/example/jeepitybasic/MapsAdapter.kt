@@ -42,11 +42,11 @@ class MapsAdapter(val context: Context, val UserMap: List<UserMap>, private val 
             onClickListener.onItemClick(position)
         }
         val textViewTitle = holder.itemView.findViewById<TextView>(R.id.LineOne)
-        val textViewDesc = holder.itemView.findViewById<TextView>(R.id.LineTwo)
+
         textViewTitle.text = userMap.title
         //textViewDesc.text = userMap.places.description
 
-        textViewDesc.text =userMap.places.listIterator(1).toString()
+
 
     }
 

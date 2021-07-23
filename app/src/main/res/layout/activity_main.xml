@@ -15,8 +15,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.118" />
 
     <Button
         android:id="@+id/pins"
@@ -26,7 +26,7 @@
         android:layout_marginTop="9dp"
         android:text="Locations"
         app:backgroundTint="#FFE242"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,24 +64,24 @@
         android:background="#A4F4F4F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner2"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintVertical_bias="0.222" />
 
     <Button
         android:id="@+id/btn_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="11dp"
         android:layout_marginBottom="4dp"
         android:text="route"
         app:elevation="60dp"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        app:layout_constraintVertical_bias="0.217" />
 
     <TextView
         android:id="@+id/textView20"
@@ -104,6 +104,7 @@
         android:fontFamily="sans-serif-condensed"
         android:textColor="#000000"
         android:textSize="12sp"
+        android:gravity="top"
         app:layout_constraintBottom_toBottomOf="@id/textView20"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
         app:layout_constraintHorizontal_bias="0.425"
@@ -115,6 +116,7 @@
         android:id="@+id/textView4"
         android:layout_width="340dp"
         android:layout_height="33dp"
+        android:gravity="top"
         android:fontFamily="sans-serif-condensed"
         android:textColor="#000000"
         android:textSize="12sp"
