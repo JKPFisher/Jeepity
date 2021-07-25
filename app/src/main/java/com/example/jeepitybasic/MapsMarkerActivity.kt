@@ -270,7 +270,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                            ("Camp Allen") -> Text.text =
                                "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
 
-//("Campo Filipino") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
+ ("Campo Filipino") -> Text.text = "Take the Campo Filipino Jeep to the paradahan of"
 
                            ("City Camp Central") -> Text.text =
                                "Take the City Camp Jeep to the paradahan of"
@@ -298,7 +298,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
 
 //("DPS Compound") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
 
-//("Engineers' Hill") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
+("Engineers' Hill") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
 
 //("Esmeralda Avenue") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
 
@@ -316,9 +316,9 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                            ("General Emilio F. Aguinaldo (QuirinoMagsaysay, Lower)") -> Text.text =
                                "Take the City Camp (QM) Jeep to the paradahan of"
 
-//("General Luna, Upper") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
+("General Luna, Upper") -> Text.text = "Take any city bound jeep to the paradahan of"
 
-//("General Luna, Lower") -> Text.text = "Take the Aurora Hill or Trancoville Jeep to the paradahan of"
+("General Luna, Lower") -> Text.text = "Take any city bound jeep to the paradahan of"
 
                            ("Gibraltar") -> Text.text =
                                "Take the Mines View Jeep to the paradahan of"
@@ -410,7 +410,7 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                                "La Trinidad, located at Shanum Street. Then Take the La Trinidad Jeep"
                            ("Maria Basa") -> text2.text =
                                "Maria Basa, located at 60-240 Maria Basa Street. Then Take the Maria Basa Jeep"
-
+//ISSUE
                            ("Baguio-Pico") -> text2.text =
                                "Baguio-Pico, located at 6 Rajah Matanda Street. Then Take the Baguio-Pico Jeep"
                            ("Kitma ") -> text2.text =
@@ -469,7 +469,8 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                     val location = locationResult.lastLocation
                     println("got this far 3")
 
-
+           //         val origins = location.latitude,location.longitude
+//ADD COMPUTE FARE ???
 
                  databaseRef = Firebase.database.reference
                     val locationlogging = LocationLogging(location.latitude, location.longitude)
@@ -611,7 +612,6 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                         address.contains("Marcoville St") ->  spinner_location.setSelection(14)
                         address.contains("Utility Rd") ->  spinner_location.setSelection(14)
                         address.contains("Balsigan Rd") ->  spinner_location.setSelection(15)
-                        address.contains("Ben Palispis Hwy") ->  spinner_location.setSelection(15)
                         address.contains("Bayan Park Rd") ->  spinner_location.setSelection(16)
                         address.contains("E Bayan Park Rd") ->  spinner_location.setSelection(16)
                         address.contains("Ambiong Rd") ->  spinner_location.setSelection(16)
@@ -826,7 +826,6 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
                         address.contains("Lower Justice Village Rd") ->  spinner_location.setSelection(
                             57)
                         address.contains("N Santo Tomas Rd") ->  spinner_location.setSelection(57)
-                        address.contains("Ben Palispis Hwy") ->  spinner_location.setSelection(57)
                         address.contains("Holy Ghost Hill Ext. Rd") ->  spinner_location.setSelection(
                             58)
                         address.contains("Yangco Rd") ->  spinner_location.setSelection(58)
@@ -1119,7 +1118,62 @@ class MapsMarkerActivity : AppCompatActivity(), OnMapReadyCallback {
            val spinner_destination: Spinner = findViewById(R.id.spinner2)
            when {
               userMap.title.equals("Igorot Park") -> spinner_destination.setSelection(66)
+               userMap.title.equals("Lemon and Olives") -> spinner_destination.setSelection(90)
+               userMap.title.equals("Grumpy Joe") -> spinner_destination.setSelection(49)
+               userMap.title.equals("Sajj") -> spinner_destination.setSelection(79)
+               userMap.title.equals("Abonabil Diner") -> spinner_destination.setSelection(89)
 
+               userMap.title.equals("Pizza Hut") -> spinner_destination.setSelection(40)
+               userMap.title.equals("Mcdonald's") -> spinner_destination.setSelection(1)
+               userMap.title.equals("Greenwich") -> spinner_destination.setSelection(122)
+
+               userMap.title.equals("University of the Cordilleras") -> spinner_destination.setSelection(38)
+               userMap.title.equals("University of Baguio") -> spinner_destination.setSelection(110)
+               userMap.title.equals("Pines City Colleges") -> spinner_destination.setSelection(79)
+//***************************************************************************************************************
+               userMap.title.equals("AMA Computer University") -> spinner_destination.setSelection(10)
+               userMap.title.equals("ST. Louis University") -> spinner_destination.setSelection(11)
+               userMap.title.equals("University of the Philippines Baguio") -> spinner_destination.setSelection(12)
+               userMap.title.equals("STI College") -> spinner_destination.setSelection(13)
+               userMap.title.equals("Philippine Women's University - CDCEC Baguio ") -> spinner_destination.setSelection(14)
+               userMap.title.equals("Informatics Institute Baguio") -> spinner_destination.setSelection(15)
+               userMap.title.equals("National Baguio University") -> spinner_destination.setSelection(16)
+               userMap.title.equals("Philippine Military Academy") -> spinner_destination.setSelection(17)
+               userMap.title.equals("Remnant International College") -> spinner_destination.setSelection(18)
+
+               userMap.title.equals("International Christian College") -> spinner_destination.setSelection(19)
+               userMap.title.equals("Keystone College") -> spinner_destination.setSelection(20)
+               userMap.title.equals("The Mansion") -> spinner_destination.setSelection(21)
+               userMap.title.equals("Yellow Trail") -> spinner_destination.setSelection(22)
+               userMap.title.equals("Bell House") -> spinner_destination.setSelection(23)
+               userMap.title.equals("Cemetery of Negativism") -> spinner_destination.setSelection(24)
+               userMap.title.equals("Bencab Museum") -> spinner_destination.setSelection(25)
+               userMap.title.equals("Burnham Park") -> spinner_destination.setSelection(26)
+               userMap.title.equals("Baguio Museum") -> spinner_destination.setSelection(27)
+               userMap.title.equals("MT.Yangbew") -> spinner_destination.setSelection(28)
+               userMap.title.equals("Botanical Garden") -> spinner_destination.setSelection(29)
+               userMap.title.equals("Mines View Park") -> spinner_destination.setSelection(30)
+               userMap.title.equals("Camp John Hay") -> spinner_destination.setSelection(31)
+               userMap.title.equals("Strawberry Farm") -> spinner_destination.setSelection(32)
+               userMap.title.equals("Stobosa") -> spinner_destination.setSelection(33)
+               userMap.title.equals("Tree Top Adventure") -> spinner_destination.setSelection(34)
+               userMap.title.equals("Bell Church") -> spinner_destination.setSelection(35)
+               userMap.title.equals("Tam-awan village") -> spinner_destination.setSelection(36)
+               userMap.title.equals("Wright Park") -> spinner_destination.setSelection(37)
+               userMap.title.equals("Govenor Pack Road") -> spinner_destination.setSelection(38)
+               userMap.title.equals("Magsaysay Avenue") -> spinner_destination.setSelection(39)
+               userMap.title.equals("Harrison Road") -> spinner_destination.setSelection(40)
+               userMap.title.equals("Veterans Loop") -> spinner_destination.setSelection(41)
+               userMap.title.equals("SkyWorld") -> spinner_destination.setSelection(42)
+               userMap.title.equals("KFC Lower Session") -> spinner_destination.setSelection(43)
+               userMap.title.equals("Victory Liner") -> spinner_destination.setSelection(44)
+               userMap.title.equals("Pinesview Bridge") -> spinner_destination.setSelection(45)
+               userMap.title.equals("Centermall") -> spinner_destination.setSelection(46)
+               userMap.title.equals("Jacinto Street") -> spinner_destination.setSelection(47)
+               userMap.title.equals("Kayang Street") -> spinner_destination.setSelection(48)
+               userMap.title.equals("Baguio Night Market") -> spinner_destination.setSelection(49)
+               userMap.title.equals("Mt.Kalugong") -> spinner_destination.setSelection(50)
+               userMap.title.equals("Baguio Central University") -> spinner_destination.setSelection(51)
 
            }
        }
