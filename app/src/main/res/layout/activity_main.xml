@@ -14,9 +14,10 @@
         android:background="#A4F4F4F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <Button
         android:id="@+id/pins"
@@ -78,15 +79,14 @@
         app:elevation="60dp"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.578" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/rounded_grey_transparent_corners"
         android:duplicateParentState="false"
@@ -98,26 +98,26 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="229dp"
+        android:layout_height="31dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="top"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView20"
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="340dp"
         android:layout_height="33dp"
         android:fontFamily="sans-serif-condensed"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:gravity="top"
-        app:layout_constraintBottom_toBottomOf="@id/textView20"
-        app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="340dp"
-        android:layout_height="33dp"
-        android:gravity="top"
-        android:fontFamily="sans-serif-condensed"
+        android:gravity="bottom"
         android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/textView20"
@@ -126,6 +126,21 @@
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toTopOf="@+id/textView20"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="101dp"
+        android:layout_height="31dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="bottom"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/textView20"
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/textView20"
+        app:layout_constraintVertical_bias="0.75" />
 
     <fragment
         android:id="@+id/map"

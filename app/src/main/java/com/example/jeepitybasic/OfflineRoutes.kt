@@ -144,6 +144,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
         orcolors.setOnClickListener       {
@@ -153,6 +154,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
         orbencab.setOnClickListener       {
@@ -162,6 +164,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
         orstrawberry.setOnClickListener       {
@@ -171,6 +174,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
         ortamawan.setOnClickListener       {
@@ -180,6 +184,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
         ormansion.setOnClickListener       {
@@ -189,6 +194,7 @@ class OfflineRoutes  : AppCompatActivity() {
             button.setOnClickListener{ val intent = Intent(
                 this,
                 OfflineRoutes::class.java)
+                finish()
                 startActivity(intent)}
         }
     }
